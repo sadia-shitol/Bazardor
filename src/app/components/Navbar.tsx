@@ -28,7 +28,7 @@ const Navbar = () => {
                 <span className='text-2xl font-bold '>বাজার দর</span>
               </Link>
             </div>
-            <div className='text-large p-2 ml-0'>{date}</div>
+            <div className='text-large p-2 ml-4'>{date}</div>
           </div>
 
           <div className='flex'>
@@ -38,8 +38,8 @@ const Navbar = () => {
                 role='button'
                 className='btn btn-ghost btn-circle avatar'
               >
-                <div className='w-96 rounded-full border-2 border-s-olive-950'>
-                  <Image alt='Tailwind CSS Navbar component' src={user} />
+                <div className='w-100 rounded-full border-[0.1px] border-s-olive-600'>
+                  <Image alt='Profile' src={user} />
                 </div>
               </div>
               <span> Shitol</span>
