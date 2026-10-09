@@ -7,6 +7,7 @@ type Product = {
   id: string
   slug: string
   nameBn: string
+  image: string
   category?: {
     icon?: string
     nameBn?: string
@@ -50,7 +51,7 @@ const PriceTicker = () => {
 
   if (loading) {
     return (
-      <div className='bg-green-950 px-4 py-3 text-sm text-white'>
+      <div className='bg-green-950 px-4 py-3 text-sm text-black'>
         বাজারদরের তথ্য লোড হচ্ছে...
       </div>
     )
@@ -59,7 +60,7 @@ const PriceTicker = () => {
   if (products.length === 0) return null
 
   return (
-    <div className='overflow-hidden bg-white py-3 text-sm'>
+    <div className='overflow-hidden  py-3 text-sm'>
       <MarqueeText duration={30} direction='right'>
         {products.map((product) => {
           const pct = Number(product.change?.pct) || 0
@@ -74,16 +75,13 @@ const PriceTicker = () => {
             : 'text-gray-300'
 
           const arrow = isUp ? '▲' : isDown ? '▼' : '—'
-
-          const categoryIcon =
-            product.category?.icon ?? product.categoryIcon ?? '🛒'
           return (
             <span
               key={product.id}
               className='mx-6 inline-flex items-center gap-2 whitespace-nowrap text-green'
             >
-              <span>{categoryIcon}</span>
-              <span className='font-medium'>{product.nameBn}</span>
+              <span>{product.image}</span>
+              <span className='font-medium text-black'>{product.nameBn}</span>
 
               <span className={`font-semibold ${color}`}>
                 {arrow} {Math.abs(pct).toLocaleString('bn-BD')}%

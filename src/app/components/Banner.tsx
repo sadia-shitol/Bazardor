@@ -4,7 +4,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import Container from './Container'
+
 const Banner = () => {
   const [date, setDate] = useState('')
   useEffect(() => {
@@ -16,7 +16,6 @@ const Banner = () => {
   return (
     <section className='py-4 sm:py-6'>
       <div className='mt-3 flex flex-col-reverse items-center justify-between gap-4 rounded-3xl border border-base-300 bg-base-200 px-4 py-5 shadow-sm sm:px-6 md:min-h-62.5 md:flex-row md:gap-8 md:px-8 lg:px-10'>
-        {/* Text content */}
         <div className='w-full flex-1 text-center md:text-left ml-5'>
           <span className='inline-block rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700'>
             {date}
