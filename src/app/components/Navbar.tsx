@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import Container from './Container'
 import logo from '@/app/assets/logo.png'
+import Navlinks from './Navlinks'
+import PriceTicker from './PriceTicker'
 const Navbar = () => {
   const [date, setDate] = useState('')
   useEffect(() => {
@@ -62,7 +64,9 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+        <Navlinks />
       </Container>
+      <PriceTicker />
     </div>
   )
 }

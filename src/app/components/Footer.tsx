@@ -13,7 +13,7 @@ const Footer = () => {
               বাজার দর — প্রয়োজনীয় পণ্যের দাম এক নজরে।
             </span>
           </aside>
-          <nav className='grid-flow-col gap-4 md:place-self-center md:justify-self-end'>
+          <nav className='grid-flow-col gap-4 md:place-self-center md:justify-self-end align-middle'>
             <p>সকল দাম সম্ভাব্য; বাজার অবস্থার ওপর নির্ভর করে পরিবর্তিত হয়।</p>
           </nav>
         </footer>
