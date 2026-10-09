@@ -1,5 +1,13 @@
-// import Banner from './components/Banner'
+import Banner from './components/Banner'
+
+import Container from './components/Container'
 
 export default function Home() {
-  return <div></div>
+  return (
+    <div>
+      <Container>
+        <Banner />
+      </Container>
+    </div>
+  )
 }
