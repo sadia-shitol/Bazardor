@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { BazarProduct } from '@/app/Type'
-
+export const instant = false
 type Props = {
   params: Promise<{ id: string }>
 }

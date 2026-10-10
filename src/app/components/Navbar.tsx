@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import user from '@/app/assets/doreamon.png'
+import React, { Suspense } from 'react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import Container from './Container'
@@ -46,7 +46,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        <Navlinks />
+        <Suspense fallback={<div className='min-h-8' />}>
+          <Navlinks />
+        </Suspense>
       </Container>
       <PriceTicker />
     </div>
