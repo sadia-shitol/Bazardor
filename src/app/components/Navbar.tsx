@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import Container from './Container'
 import logo from '@/app/assets/logo.png'
+// import {SignInPage} from '../sign-in/page'
+import SignUpPage from '../sign-up/page'
 import Navlinks from './Navlinks'
 import PriceTicker from './PriceTicker'
 const Navbar = () => {
@@ -34,11 +36,11 @@ const Navbar = () => {
           </div>
 
           <div className='flex gap-2 navbar-end'>
-            <Link href='' className='btn shadow-sm'>
+            <Link href='../sign-in' className='btn shadow-sm'>
               সাইন ইন
             </Link>
             <Link
-              href=''
+              href='../sign-up'
               className='btn bg-green-800 shadow-sm hover:bg-green-600 text-white'
             >
               সাইন আপ
