@@ -13,6 +13,18 @@ const Banner = () => {
     })
     setDate(currentDate)
   }, [])
+
+  const handleAllProductsSection = () => {
+    const allProductsSection = document.getElementById('allProductsSection')
+
+    if (allProductsSection) {
+      allProductsSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }
+  }
+
   return (
     <section className='py-4 mt-60 sm:py-6'>
       <div className=' flex flex-col-reverse items-center justify-between gap-4 rounded-3xl border border-base-300 bg-base-200 px-4 py-5 shadow-sm sm:px-6 md:min-h-62.5 md:flex-row md:gap-8 md:px-8 lg:px-10'>
@@ -30,6 +42,7 @@ const Banner = () => {
             জায়গায়।
           </p>
           <Link
+            onClick={handleAllProductsSection}
             href='/'
             className='btn btn-primary bg-green-700 mt-5 inline-flex items-center justify-center rounded-md border border-green-700 px-5 py-2 text-sm font-medium text-white transition hover:bg-green-700 hover:text-white'
           >

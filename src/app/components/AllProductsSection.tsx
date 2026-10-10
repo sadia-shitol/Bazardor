@@ -20,7 +20,7 @@ const AllProductsSection = async () => {
       : data.products ?? []
 
     return (
-      <section className='py-8'>
+      <section id='allProductsSection' className='py-8'>
         <BazarProductList products={products} />
       </section>
     )

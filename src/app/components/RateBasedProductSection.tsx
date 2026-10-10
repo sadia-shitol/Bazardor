@@ -37,8 +37,7 @@ const RateBasedProductSection = async () => {
 
   return (
     <div className='space-y-6'>
-      {/* Increased prices */}
-      <section className='  p-4 sm:p-5'>
+      <section className=' justify-center p-4 sm:p-5'>
         <h2 className='mb-4 flex items-center gap-2 font-bold text-slate-800 text-3xl'>
           <span className='text-red-500'>▲</span>
           আজ দাম বেড়েছে
@@ -58,7 +57,7 @@ const RateBasedProductSection = async () => {
       </section>
 
       {/* Decreased prices */}
-      <section className=' p-4 sm:p-5'>
+      <section className=' justify-center p-4 sm:p-5'>
         <h2 className='mb-4 flex items-center gap-2 text-3xl font-bold text-slate-800'>
           <span className='text-green-600'>▼</span>
           আজ দাম কমেছে
