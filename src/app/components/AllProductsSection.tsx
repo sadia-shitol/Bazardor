@@ -1,7 +1,7 @@
 import BazarProductList from '@/app/components/AllProductList'
 import type { BazarProduct } from '@/app/Type'
 
-const API_URL = 'https://api.api-store.workers.dev/api/bazardor/products'
+const API_URL = 'https://api.abcz.workers.dev/api/bazardor/products'
 export const instant = false
 const AllProductsSection = async () => {
   try {

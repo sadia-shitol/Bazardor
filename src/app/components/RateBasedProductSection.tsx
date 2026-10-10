@@ -3,9 +3,7 @@ import type { BazarProduct } from '@/app/Type'
 import BazarPriceCard from '@/app/components/BazarPriceCard'
 
 async function getProducts(): Promise<BazarProduct[]> {
-  const res = await fetch(
-    'https://api.api-store.workers.dev/api/bazardor/products'
-  )
+  const res = await fetch('https://api.abcz.workers.dev/api/bazardor/products')
 
   if (!res.ok) {
     throw new Error('Failed to fetch product prices')
