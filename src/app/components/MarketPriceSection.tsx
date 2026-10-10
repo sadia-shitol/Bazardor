@@ -141,7 +141,7 @@ const MarketPriceSection: React.FC<MarketPriceSectionProps> = ({ id }) => {
       </h3>
 
       <div className='overflow-x-auto rounded-xl border text-black border-gray-200 bg-gray-100  '>
-        <table className='w-full min-w-[650px] border-collapse text-sm'>
+        <table className='w-full min-w-162.5 border-collapse text-sm'>
           <thead className='bg-[#f1f5f1] text-gray-500'>
             <tr>
               <th className=' text-black px-4 py-3 text-left font-semibold border-r border-gray-300'>

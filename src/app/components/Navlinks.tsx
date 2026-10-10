@@ -20,7 +20,7 @@ const Navlinks = () => {
     const fetchCategories = async () => {
       try {
         const res = await fetch(
-          'https://api.abcz.workers.dev/api/bazardor/categories'
+          'https://openapi.programming-hero.com/api/bazardor/categories'
         )
 
         if (!res.ok) {
@@ -44,19 +44,19 @@ const Navlinks = () => {
       aria-label='Product categories'
       className='w-[70%] lg:w-[80%] md:w-[90%] sm:w-full mt-4'
     >
-      <div className='flex items-center justify-between gap-4 overflow-x-auto py-3'>
+      <div className='flex items-center justify-between gap-2 overflow-x-auto py-3'>
         {loading
           ? Array.from({ length: 8 }).map((_, index) => (
               <div key={index} className='skeleton h-6 w-16 shrink-0' />
             ))
           : categories.map((category) => {
-              const href = `/category/${category.slug}`
+              const href = `/categories/${category.slug}`
               const isActive = pathname === href
 
               return (
                 <Link
                   key={category.id}
-                  href={href}
+                  href={`/categories/${category.slug}`}
                   className={`flex shrink-0 items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold whitespace-nowrap transition-colors duration-200 sm:text-base ${
                     isActive
                       ? 'bg-green-100 text-green-800'

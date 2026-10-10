@@ -1,17 +1,13 @@
 import BazarProductList from '@/app/components/AllProductList'
 import type { BazarProduct } from '@/app/Type'
 
-const API_URL = 'https://api.abcz.workers.dev/api/bazardor/products'
+const API_URL = 'https://openapi.programming-hero.com/api/bazardor/products'
 export const instant = false
 const AllProductsSection = async () => {
   try {
     const response = await fetch(API_URL, {
       next: { revalidate: 300 },
     })
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch products')
-    }
 
     const data = await response.json()
 

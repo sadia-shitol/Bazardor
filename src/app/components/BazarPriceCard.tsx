@@ -21,7 +21,6 @@ export default function BazarPriceCard({ product }: Props) {
     <Link href={`/products/${product.id}`}>
       <article className='card rounded-xl border border-base-200 bg-base-100 shadow-sm transition-shadow hover:shadow-md'>
         <div className='card-body bg-[#fafcfa] gap-3 p-3 sm:p-4'>
-          {/* Product info + category icon */}
           <div className=' flex items-start justify-between gap-2'>
             <div className='flex min-w-0 items-center gap-2'>
               <div className='flex size-10 shrink-0 items-center justify-center rounded-xl bg-base-200/70 text-xl'>

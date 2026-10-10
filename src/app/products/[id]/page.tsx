@@ -1,5 +1,3 @@
-import React from 'react'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import MarketPriceSection from '@/app/components/MarketPriceSection'
 import type { BazarProduct } from '@/app/Type'
@@ -8,7 +6,7 @@ type Props = {
   params: Promise<{ id: string }>
 }
 
-const API_URL = 'https://api.abcz.workers.dev/api/bazardor/products'
+const API_URL = 'https://openapi.programming-hero.com/api/bazardor/products'
 
 const unitLabels: Record<string, string> = {
   kg: 'কেজি',
@@ -81,11 +79,11 @@ const ProductDetailsPage = async ({ params }: Props) => {
                 className={`badge h-auto gap-1 border-0 px-3 py-2 text-sm font-semibold 
               ${
                 isUp
-                  ? 'ml-96 bg-red-50 text-red-600'
-                  : ' ml-96 bg-green-50 text-green-800'
+                  ? 'ml-96 bg-red-100 border-red-200 border-[0.1px] text-red-600'
+                  : ' ml-96 bg-green-100  border-green-200 border-[0.1px] text-green-800'
               }`}
               >
-                {isUp ? '▲' : '▼'}{' '}
+                {isUp ? '▲' : '▼'}
                 {Number(product.change.pct).toLocaleString('bn-BD', {
                   maximumFractionDigits: 2,
                 })}
