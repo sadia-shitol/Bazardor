@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
-import type { BazarProduct } from '@/app/types/product'
+import type { BazarProduct } from '@/app/Type'
 import BazarPriceCard from './BazarPriceCard'
 
 type Props = {
@@ -24,30 +24,32 @@ export default function AllProductsList({ products }: Props) {
   }, [products, sortOrder])
 
   return (
-    <section className='rounded-xl bg-[#f0f5f0] p-4 sm:p-5'>
+    <section className=' p-4 sm:p-5'>
       {/* Heading and sorting */}
       <div className='mb-5 flex flex-wrap items-center justify-between gap-3'>
         <div>
-          <h2 className='text-lg font-bold text-slate-800'>সব পণ্য</h2>
-          <p className='mt-1 text-sm text-slate-500'>
+          <h2 className='text-3xl font-bold text-slate-800'>সব পণ্য</h2>
+          <p className='mt-1 text-2xl text-slate-500'>
             বাজারের সব পণ্যের আজকের দাম
           </p>
         </div>
-
-        <select
-          aria-label='Sort products by price'
-          className='select select-bordered select-sm w-full max-w-48 bg-white sm:w-auto'
-          value={sortOrder}
-          onChange={(e) => setSortOrder(e.target.value)}
-        >
-          <option value='default'>ডিফল্ট ক্রম</option>
-          <option value='low-to-high'>দাম: কম থেকে বেশি</option>
-          <option value='high-to-low'>দাম: বেশি থেকে কম</option>
-        </select>
+        <div className='flex'>
+          <span className='text-slate-500 ml-18.75 p-2'>সাজান</span>
+          <select
+            aria-label='Sort products by price'
+            className='select select-bordered select-sm w-full max-w-48 bg-white sm:w-auto'
+            value={sortOrder}
+            onChange={(e) => setSortOrder(e.target.value)}
+          >
+            <option value='default'>ডিফল্ট ক্রম</option>
+            <option value='low-to-high'>দাম: কম থেকে বেশি</option>
+            <option value='high-to-low'>দাম: বেশি থেকে কম</option>
+          </select>
+        </div>
       </div>
 
       {/* Product count */}
-      <p className='mb-3 text-xs text-slate-500'>
+      <p className='mb-3 text-xl text-slate-500'>
         মোট {sortedProducts.length.toLocaleString('bn-BD')} টি পণ্য
       </p>
 

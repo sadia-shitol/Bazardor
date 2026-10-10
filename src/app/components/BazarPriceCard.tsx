@@ -5,7 +5,7 @@ type Props = {
 
 const unitLabels: Record<string, string> = {
   kg: 'কেজি',
-  piece: 'প্রতি পিস',
+  piece: 'পিস',
   dozen: 'ডজন',
   litre: 'লিটার',
 }

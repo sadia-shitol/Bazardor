@@ -42,7 +42,7 @@ const Navlinks = () => {
   return (
     <nav
       aria-label='Product categories'
-      className='w-[60%] lg:w-[60%] md:w-[90%] sm:w-full mt-0 m-4'
+      className='w-[60%] lg:w-[60%] md:w-[90%] sm:w-full mt-4 m-4'
     >
       <div className='flex items-center justify-between gap-4 overflow-x-auto py-3'>
         {loading

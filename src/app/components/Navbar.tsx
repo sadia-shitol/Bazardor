@@ -16,9 +16,9 @@ const Navbar = () => {
     setDate(currentDate)
   }, [])
   return (
-    <div className='bg-base-200 shadow-sm'>
+    <div className='bg-base-200 shadow-sm fixed z-10'>
       <Container>
-        <div className='navbar '>
+        <div className='navbar  '>
           <div className='mt-2  flex-2'>
             <div className=' flex '>
               <Link href='/' className='btn btn-ghost text-2xl'>
@@ -33,37 +33,19 @@ const Navbar = () => {
             <div className='text-large p-2 ml-4'>{date}</div>
           </div>
 
-          <div className='flex'>
-            <div className='dropdown dropdown-end'>
-              <div
-                tabIndex={0}
-                role='button'
-                className='btn btn-ghost btn-circle avatar'
-              >
-                <div className='w-100 rounded-full border-[0.1px] border-s-olive-600'>
-                  <Image alt='Profile' src={user} />
-                </div>
-              </div>
-              <span> Shitol</span>
-              <ul
-                tabIndex={-1}
-                className='menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow'
-              >
-                <li>
-                  <Link href={'/'} className='justify-between'>
-                    Profile
-                  </Link>
-                </li>
-                <li>
-                  <Link href={'/'}>Settings</Link>
-                </li>
-                <li>
-                  <Link href={'/'}>Logout</Link>
-                </li>
-              </ul>
-            </div>
+          <div className='flex gap-2 navbar-end'>
+            <Link href='' className='btn shadow-sm'>
+              সাইন ইন
+            </Link>
+            <Link
+              href=''
+              className='btn bg-green-800 shadow-sm hover:bg-green-600 text-white'
+            >
+              সাইন আপ
+            </Link>
           </div>
         </div>
+
         <Navlinks />
       </Container>
       <PriceTicker />

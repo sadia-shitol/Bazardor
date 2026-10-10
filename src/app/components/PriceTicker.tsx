@@ -3,10 +3,13 @@
 import { useEffect, useState } from 'react'
 import MarqueeText from 'react-marquee-text'
 import 'react-marquee-text/dist/styles.css'
+
 type Product = {
   id: string
   slug: string
   nameBn: string
+  today: string
+  unit: string
   image: string
   category?: {
     icon?: string
@@ -25,6 +28,12 @@ type Product = {
 const PriceTicker = () => {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
+  const unitBn: Record<string, string> = {
+    kg: 'কেজি',
+    piece: 'পিস',
+    dozen: 'ডজন',
+    litre: 'লিটার',
+  }
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -61,7 +70,7 @@ const PriceTicker = () => {
 
   return (
     <div className='overflow-hidden  py-3 text-sm'>
-      <MarqueeText duration={30} direction='right'>
+      <MarqueeText duration={100} pauseOnHover direction='right'>
         {products.map((product) => {
           const pct = Number(product.change?.pct) || 0
 
@@ -82,7 +91,10 @@ const PriceTicker = () => {
             >
               <span>{product.image}</span>
               <span className='font-medium text-black'>{product.nameBn}</span>
-
+              <span className='font-medium text-black'>
+                {Number(product.today).toLocaleString('bn-BD')} টাকা/ প্রতি{' '}
+                {unitBn[product.unit] ?? product.unit}
+              </span>
               <span className={`font-semibold ${color}`}>
                 {arrow} {Math.abs(pct).toLocaleString('bn-BD')}%
               </span>
