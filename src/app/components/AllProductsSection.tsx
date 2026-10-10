@@ -2,11 +2,11 @@ import BazarProductList from '@/app/components/AllProductList'
 import type { BazarProduct } from '@/app/Type'
 
 const API_URL = 'https://api.api-store.workers.dev/api/bazardor/products'
-
+export const instant = false
 const AllProductsSection = async () => {
   try {
     const response = await fetch(API_URL, {
-      cache: 'no-store',
+      next: { revalidate: 300 },
     })
 
     if (!response.ok) {
