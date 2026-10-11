@@ -1,6 +1,9 @@
 'use client'
+
+import React from 'react'
 import Link from 'next/link'
 import { authClient } from '@/lib/auth-client'
+
 const SignUpPage = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -53,7 +56,7 @@ const SignUpPage = () => {
   }
 
   return (
-    <div className='mx-auto mt-40 w-full max-w-118 px-4 pb-5 pt-20'>
+    <div className='mx-auto mt-40 w-full max-w-[472px] px-4 pb-5 pt-20'>
       <div className='text-center'>
         <h1 className='text-2xl font-bold tracking-tight text-[#202b24] sm:text-3xl'>
           অ্যাকাউন্ট তৈরি করুন
@@ -164,7 +167,7 @@ const SignUpPage = () => {
             type='button'
             className='flex h-11 items-center justify-center gap-2 rounded-[10px] border border-[#dce5dd] text-sm font-semibold text-[#28332b] transition hover:bg-[#f0f5f0]'
           >
-            <svg viewBox='0 0 48 48' className='size-4.25' aria-hidden='true'>
+            <svg viewBox='0 0 48 48' className='size-[17px]' aria-hidden='true'>
               <path
                 fill='#4285F4'
                 d='M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11a9.4 9.4 0 0 1-4.1 6.2v5.1h6.7c3.9-3.6 6-8.8 6-15Z'
@@ -182,7 +185,7 @@ const SignUpPage = () => {
                 d='M24 12c3 0 5.7 1 7.8 3l5.8-5.8A19.4 19.4 0 0 0 24 4 20 20 0 0 0 5.8 15l6.9 5.2C14.3 15.5 18.8 12 24 12Z'
               />
             </svg>
-            Google
+            Google দিয়ে চালিয়ে যান
           </button>
 
           <button
@@ -190,12 +193,12 @@ const SignUpPage = () => {
             onClick={() => handleSocialSignUp('github')}
             className='flex h-11 items-center justify-center gap-2 rounded-[10px] border border-[#dce5dd] text-sm font-semibold text-[#28332b] transition hover:bg-[#f0f5f0]'
           >
-            GitHub
+            GitHub দিয়ে চালিয়ে যান
           </button>
         </div>
 
         <p className='mt-5 text-center text-sm text-[#38423b]'>
-          অ্যাকাউন্ট আছে?
+          অ্যাকাউন্ট আছে?{' '}
           <Link
             href='/sign-in'
             className='font-medium text-[#07883e] hover:underline'

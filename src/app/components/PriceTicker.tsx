@@ -39,7 +39,7 @@ const PriceTicker = () => {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          'https://openapi.programming-hero.com/api/bazardor/products'
+          'https://api.abcz.workers.dev/api/bazardor/products'
         )
 
         if (!res.ok) {
