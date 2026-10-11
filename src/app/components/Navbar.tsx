@@ -24,7 +24,7 @@ const Navbar = () => {
               <Link href='/' className='btn btn-ghost text-2xl'>
                 <Image
                   src={logo}
-                  alt='Bazardor Logo'
+                  alt='Bazardor-Logo'
                   className='hidden md:block'
                 />
                 <span className='text-2xl font-bold '>বাজার দর</span>
