@@ -2,26 +2,73 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { authClient } from '@/lib/auth-client'
+
 const SignUpPage = () => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+
+    const form = new FormData(event.currentTarget)
+    const name = form.get('name') as string
+    const email = form.get('email') as string
+    const password = form.get('password') as string
+    const confirmPassword = form.get('confirmPassword') as string
+
+    if (password !== confirmPassword) {
+      alert('পাসওয়ার্ড মিলছে না')
+      return
+    }
+
+    try {
+      const { error } = await authClient.signUp.email({
+        name,
+        email,
+        password,
+        callbackURL: '/',
+      })
+
+      if (error) {
+        alert(error.message)
+        return
+      }
+
+      alert('অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!')
+    } catch (error) {
+      console.error('Sign-up error:', error)
+      alert('অ্যাকাউন্ট তৈরি করা যায়নি। আবার চেষ্টা করুন।')
+    }
   }
+
+  const handleSocialSignUp = async (provider: 'google' | 'github') => {
+    try {
+      const { error } = await authClient.signIn.social({
+        provider,
+        callbackURL: '/',
+      })
+
+      if (error) {
+        alert(error.message)
+      }
+    } catch (error) {
+      console.error('Social sign-up error:', error)
+      alert('সোশ্যাল সাইন-আপ ব্যর্থ হয়েছে। আবার চেষ্টা করুন।')
+    }
+  }
+
   return (
-    <div className='pt-20 mx-auto mt-40  w-full pb-5 max-w-[472px]'>
-      <div className=' text-center'>
+    <div className='mx-auto mt-40 w-full max-w-[472px] px-4 pb-5 pt-20'>
+      <div className='text-center'>
         <h1 className='text-2xl font-bold tracking-tight text-[#202b24] sm:text-3xl'>
           অ্যাকাউন্ট তৈরি করুন
         </h1>
 
-        <p className='mt-2 mb-2 text-sm text-[#69736c] sm:text-base'>
+        <p className='mb-2 mt-2 text-sm text-[#69736c] sm:text-base'>
           বিনা খরচে সাইন আপ করে সব বিস্তারিত দাম দেখুন।
         </p>
       </div>
 
-      {/* Registration Form */}
       <div className='rounded-[20px] border border-[#dce6dd] bg-[#fbfdfb] px-5 py-7 shadow-sm sm:px-7 sm:py-8'>
         <form onSubmit={handleSubmit} className='space-y-5'>
-          {/* Name */}
           <div>
             <label
               htmlFor='name'
@@ -41,7 +88,6 @@ const SignUpPage = () => {
             />
           </div>
 
-          {/* Email */}
           <div>
             <label
               htmlFor='email'
@@ -61,7 +107,6 @@ const SignUpPage = () => {
             />
           </div>
 
-          {/* Password */}
           <div>
             <label
               htmlFor='password'
@@ -82,7 +127,6 @@ const SignUpPage = () => {
             />
           </div>
 
-          {/* Confirm Password */}
           <div>
             <label
               htmlFor='confirmPassword'
@@ -103,7 +147,6 @@ const SignUpPage = () => {
             />
           </div>
 
-          {/* Submit Button */}
           <button
             type='submit'
             className='h-11 w-full rounded-[9px] bg-[#07883e] text-sm font-semibold text-white shadow-[0_3px_4px_rgba(0,100,40,0.3)] transition hover:bg-[#067534] active:scale-[0.99]'
@@ -112,22 +155,18 @@ const SignUpPage = () => {
           </button>
         </form>
 
-        {/* Divider */}
         <div className='my-5 flex items-center gap-4'>
           <div className='h-px flex-1 bg-[#dce5dd]' />
-
           <span className='text-sm text-[#303a33]'>অথবা</span>
-
           <div className='h-px flex-1 bg-[#dce5dd]' />
         </div>
 
-        {/* Social Sign In */}
         <div className='grid grid-cols-1 gap-3 sm:grid-cols-2'>
           <button
+            onClick={() => handleSocialSignUp('google')}
             type='button'
             className='flex h-11 items-center justify-center gap-2 rounded-[10px] border border-[#dce5dd] text-sm font-semibold text-[#28332b] transition hover:bg-[#f0f5f0]'
           >
-            {/* Google icon */}
             <svg viewBox='0 0 48 48' className='size-[17px]' aria-hidden='true'>
               <path
                 fill='#4285F4'
@@ -151,14 +190,13 @@ const SignUpPage = () => {
 
           <button
             type='button'
+            onClick={() => handleSocialSignUp('github')}
             className='flex h-11 items-center justify-center gap-2 rounded-[10px] border border-[#dce5dd] text-sm font-semibold text-[#28332b] transition hover:bg-[#f0f5f0]'
           >
-            {/* <Github size={17} aria-hidden="true" /> */}
             GitHub দিয়ে চালিয়ে যান
           </button>
         </div>
 
-        {/* Login Link */}
         <p className='mt-5 text-center text-sm text-[#38423b]'>
           অ্যাকাউন্ট আছে?{' '}
           <Link
