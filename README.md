@@ -1,6 +1,6 @@
-# 🛒 বাজার দর | BazarDor
+# 🛒 বাজার দর | Bazardor
 
-### প্রয়োজনীয় পণ্যের দাম এক নজরে 🇧🇩
+### প্রয়োজনীয় পণ্যের দাম এক নজরে!!!
 
 **BazarDor (বাজার দর)** is a responsive Bengali market price tracking web application that helps users explore, compare, and understand the daily prices of essential products in Bangladesh. Users can browse products by category, view price changes, explore market-wise pricing, and securely manage their accounts.
 
@@ -56,7 +56,8 @@ BazarDor uses **BetterAuth** for user authentication and account management.
 
 ### Supported Authentication
 
-- 📧 Email & Password
+<!-- - 📧 Email & Password -->
+
 - 🔵 Google
 - ⚫ GitHub
 
@@ -169,7 +170,7 @@ Before deployment, make sure:
 
 ## 🌐 Live Demo
 
-🔗 **Live Website:** [Add your deployed website URL]
+🔗 **Live Website:** [https://bazardor-oszq.vercel.app/]
 
 🔗 **GitHub Repository:** [(https://github.com/sadia-shitol/Bazardor)]
 
