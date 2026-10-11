@@ -1,6 +1,6 @@
 import BazarPriceCard from './BazarPriceCard'
 import { BazarProduct } from '../Type'
-import React, { Suspense, useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 type Category = {
   id: string
   slug: string

@@ -5,8 +5,6 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import Container from './Container'
 import logo from '@/app/assets/logo.png'
-// import {SignInPage} from '../sign-in/page'
-import SignUpPage from '../sign-up/page'
 import Navlinks from './Navlinks'
 import PriceTicker from './PriceTicker'
 const Navbar = () => {

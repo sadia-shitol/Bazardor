@@ -29,13 +29,13 @@ const RateBasedProductSection = async () => {
     )
   }
 
-  const increasedPrice = products.filter(
-    (product) => product.change.dir === 'up'
-  )
+  const increasedPrice = products
+    .filter((product) => product.change.dir === 'up')
+    .slice(0, 6)
 
-  const decreasedPrice = products.filter(
-    (product) => product.change.dir === 'down'
-  )
+  const decreasedPrice = products
+    .filter((product) => product.change.dir === 'down')
+    .slice(0, 6)
 
   return (
     <div className='space-y-6'>

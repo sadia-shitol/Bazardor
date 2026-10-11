@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 import logo from '@/app/assets/logo.png'
 import Container from '@/app/components/Container'

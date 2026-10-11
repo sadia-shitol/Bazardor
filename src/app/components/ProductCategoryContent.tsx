@@ -31,7 +31,6 @@ const ProductCategoryContent = ({ products, categoryNameBn }: Props) => {
 
   return (
     <div className='space-y-5'>
-      {/* Category heading */}
       <div className='flex items-center gap-3 rounded-2xl border border-[#dfe7df] bg-[#fafcf9] p-4'>
         <span className='text-3xl' aria-hidden='true'>
           {categoryIcon}
@@ -46,7 +45,6 @@ const ProductCategoryContent = ({ products, categoryNameBn }: Props) => {
         </div>
       </div>
 
-      {/* Sorting bar */}
       <div className='flex justify-end rounded-2xl border border-[#dfe7df] bg-[#fafcf9] p-3'>
         <div className='flex items-center gap-3'>
           <label htmlFor='category-sort' className='text-sm text-gray-600'>
@@ -66,12 +64,10 @@ const ProductCategoryContent = ({ products, categoryNameBn }: Props) => {
         </div>
       </div>
 
-      {/* Product count */}
       <p className='text-sm text-gray-500'>
         মোট {products.length.toLocaleString('bn-BD')}টি পণ্য দেখানো হচ্ছে
       </p>
 
-      {/* Product grid */}
       {sortedProducts.length > 0 ? (
         <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3'>
           {sortedProducts.map((product) => (

@@ -20,10 +20,8 @@ const SignInPage = () => {
         </p>
       </div>
 
-      {/* Sign In Form */}
       <div className='rounded-[20px] border border-[#dce6dd] bg-[#fbfdfb] px-5 py-7 shadow-sm sm:px-7 sm:py-8'>
         <form onSubmit={handleSubmit} className='space-y-5'>
-          {/* Email */}
           <div>
             <label
               htmlFor='email'
@@ -43,7 +41,6 @@ const SignInPage = () => {
             />
           </div>
 
-          {/* Password */}
           <div>
             <label
               htmlFor='password'
@@ -64,7 +61,6 @@ const SignInPage = () => {
             />
           </div>
 
-          {/* Submit */}
           <button
             type='submit'
             className='h-11 w-full rounded-[9px] bg-[#07883e] text-sm font-semibold text-white shadow-[0_3px_4px_rgba(0,100,40,0.3)] transition hover:bg-[#067534] active:scale-[0.99]'
@@ -73,16 +69,13 @@ const SignInPage = () => {
           </button>
         </form>
 
-        {/* Divider */}
         <div className='my-5 flex items-center gap-4'>
           <div className='h-px flex-1 bg-[#dce5dd]' />
           <span className='text-sm text-[#303a33]'>অথবা</span>
           <div className='h-px flex-1 bg-[#dce5dd]' />
         </div>
 
-        {/* Social Sign In */}
         <div className='grid grid-cols-1 gap-3 sm:grid-cols-2'>
-          {/* Google */}
           <button
             type='button'
             className='flex h-11 items-center justify-center gap-2 rounded-[10px] border border-[#dce5dd] px-2 text-sm font-semibold text-[#28332b] transition hover:bg-[#f0f5f0]'
@@ -112,7 +105,6 @@ const SignInPage = () => {
             <span>Google</span>
           </button>
 
-          {/* GitHub */}
           <button
             type='button'
             className='flex h-11 items-center justify-center gap-2 rounded-[10px] border border-[#dce5dd] px-2 text-sm font-semibold text-[#28332b] transition hover:bg-[#f0f5f0]'
@@ -129,7 +121,6 @@ const SignInPage = () => {
           </button>
         </div>
 
-        {/* Sign Up Link */}
         <p className='mt-5 text-center text-sm text-[#38423b]'>
           অ্যাকাউন্ট নেই?
           <Link
@@ -140,8 +131,6 @@ const SignInPage = () => {
           </Link>
         </p>
       </div>
-
-      {/* Back to Home */}
     </div>
   )
 }

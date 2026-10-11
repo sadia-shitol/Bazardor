@@ -195,5 +195,4 @@ const MarketPriceSection: React.FC<MarketPriceSectionProps> = ({ id }) => {
     </div>
   )
 }
-
 export default MarketPriceSection

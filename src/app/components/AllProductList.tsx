@@ -25,7 +25,6 @@ export default function AllProductsList({ products }: Props) {
 
   return (
     <section className=' p-4 sm:p-5'>
-      {/* Heading and sorting */}
       <div className='mb-5 flex flex-wrap items-center justify-between gap-3'>
         <div>
           <h2 className='text-3xl font-bold text-slate-800'>সব পণ্য</h2>
@@ -48,12 +47,10 @@ export default function AllProductsList({ products }: Props) {
         </div>
       </div>
 
-      {/* Product count */}
       <p className='mb-3 text-xl text-slate-500'>
         মোট {sortedProducts.length.toLocaleString('bn-BD')} টি পণ্য
       </p>
 
-      {/* Cards */}
       {sortedProducts.length > 0 ? (
         <div className='grid grid-cols-1 gap-3 min-[400px]:grid-cols-2 lg:grid-cols-3'>
           {sortedProducts.map((product) => (

@@ -12,16 +12,15 @@ const unitLabels: Record<string, string> = {
   litre: 'লিটার',
 }
 
-export default function BazarPriceCard({ product }: Props) {
+const BazarPriceCard = ({ product }: Props) => {
   const isUp = product.change.dir === 'up'
-
   const unitLabel = unitLabels[product.unit] ?? product.unit
 
   return (
     <Link href={`/products/${product.id}`}>
       <article className='card rounded-xl border border-base-200 bg-base-100 shadow-sm transition-shadow hover:shadow-md'>
-        <div className='card-body bg-[#fafcfa] gap-3 p-3 sm:p-4'>
-          <div className=' flex items-start justify-between gap-2'>
+        <div className='card-body gap-3 bg-[#fafcfa] p-3 sm:p-4'>
+          <div className='flex items-start justify-between gap-2'>
             <div className='flex min-w-0 items-center gap-2'>
               <div className='flex size-10 shrink-0 items-center justify-center rounded-xl bg-base-200/70 text-xl'>
                 {product.image}
@@ -32,15 +31,12 @@ export default function BazarPriceCard({ product }: Props) {
                   {product.nameBn}
                 </h3>
 
-                <p className='text-large text-base-content/60'>
-                  প্রতি {unitLabel}
-                </p>
+                <p className='text-base-content/60'>প্রতি {unitLabel}</p>
               </div>
             </div>
 
-            {/* Category icon: upper right */}
             <div
-              className='flex text-sm size-8 shrink-0 items-center justify-center rounded-lg '
+              className='flex size-8 shrink-0 items-center justify-center gap-1 text-sm'
               title={product.categoryNameBn}
               aria-label={`বিভাগ: ${product.categoryNameBn}`}
             >
@@ -59,7 +55,7 @@ export default function BazarPriceCard({ product }: Props) {
             </div>
 
             <span
-              className={`badge h-auto gap-1 border-0 px-2 py-1 text-large font-medium ${
+              className={`badge h-auto gap-1 border-0 px-2 py-1 text-sm font-medium ${
                 isUp ? 'bg-red-50 text-red-600' : 'bg-green-50 text-green-900'
               }`}
             >
@@ -75,3 +71,5 @@ export default function BazarPriceCard({ product }: Props) {
     </Link>
   )
 }
+
+export default BazarPriceCard

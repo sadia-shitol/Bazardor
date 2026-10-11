@@ -1,6 +1,5 @@
 'use client'
 import banner from '@/app/assets/bazar-hero.png'
-import React from 'react'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -49,7 +48,7 @@ const Banner = () => {
             সব পণ্য দেখুন
           </Link>
         </div>
-        {/* Image */}
+
         <div className='mr-4 flex w-full flex-1 flex:col-reverse items-center justify-center md:justify-end'>
           <Image
             alt='Fitness Banner'
