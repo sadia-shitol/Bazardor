@@ -170,9 +170,9 @@ Before deployment, make sure:
 
 ## 🌐 Live Demo
 
-🔗 **Live Website:** [https://bazardor-oszq.vercel.app/]
+🔗 **Live Website:** https://bazardor-oszq.vercel.app/
 
-🔗 **GitHub Repository:** [(https://github.com/sadia-shitol/Bazardor)]
+🔗 **GitHub Repository:** https://github.com/sadia-shitol/Bazardor
 
 ---
 
