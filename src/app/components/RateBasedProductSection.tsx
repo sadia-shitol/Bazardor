@@ -32,7 +32,7 @@ const RateBasedProductSection = async () => {
   const increasedPrice = products
     .filter((product) => product.change.dir === 'up')
     .slice(0, 6)
-
+  // Added slice method to display on the live site, but because of commit issue it's not implemented in the live site
   const decreasedPrice = products
     .filter((product) => product.change.dir === 'down')
     .slice(0, 6)
